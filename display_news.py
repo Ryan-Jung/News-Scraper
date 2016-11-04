@@ -4,12 +4,11 @@ import webbrowser
 #Define GUI
 class NewsWindow(wx.Frame):
 
-
 	def __init__(self, parent, title):
 		wx.Frame.__init__(self, parent, title = title, size=(600,300))
 
-		self.data = self.loadData()
-
+		self.data = None
+		self.currentUserSelection = 0
 		self.mainsizer = wx.BoxSizer(wx.VERTICAL)
 		self.listbox = None
 
@@ -19,7 +18,7 @@ class NewsWindow(wx.Frame):
 		#Add widgets to be displayed
 		self.refresh_button = wx.Button(self, label ="Refresh")
 		self.mainsizer.AddStretchSpacer()
-		self.mainsizer.Add(self.refresh_button, flag=wx.RIGHT)
+		self.mainsizer.Add(self.refresh_button)
 		self.mainsizer.Add(self.listbox)
 		self.view_button = wx.Button(self, label = "View")
 		self.mainsizer.AddStretchSpacer()
@@ -49,17 +48,18 @@ class NewsWindow(wx.Frame):
 	def onClick(self, event):
 		"""Opens default browser to display URL of the user's selected article
 		"""
-		index = self.currentSelection
+		index = self.currentUserSelection
 		urls = self.data["urls"]
 		webbrowser.open(urls[index], 0, autoraise=True)
 
 	def saveCurrentSelection(self, listbox_event):
 		"""Keeps track of the user's selection
 		"""
-		self.currentSelection = listbox_event.GetSelection()
+		self.currentUserSelection = listbox_event.GetSelection()
 	
 	def onRefresh(self,event):
-		self.data = self.loadData()
+		"""Displays the current news articles available on www.sfgate.com
+		"""
 		self.updateListBox()
 		#self.SetSizerAndFit(self.mainsizer)
 
@@ -74,16 +74,10 @@ class NewsWindow(wx.Frame):
 			self.listbox.SetMinSize(self.GetSize())
 
 		self.data = self.loadData()
-		if self.data:
+		if self.data is not None:
 			self.listbox.Set(self.data["articles"])
 		else:
 			self.listbox.Set(["No Articles to display"])	
-
-		
-
-	
-	
-
 
        
 app = wx.App(False)

@@ -23,7 +23,8 @@ class ScrapeNews:
 
         for link in latestNewsContainer.find_all("a", class_="hdn-analytics"):
             if link.has_attr("href"):
-                    url_list.append(self._full_URL(link["href"]).encode("ascii",'ignore'))
+                    url = link["href"].encode("ascii", "ignore")
+                    url_list.append(self._full_URL(url))
                     article_list.append(link.string.encode("ascii", 'ignore'))
         return {'articles' : article_list, 'urls' : url_list}        
     
