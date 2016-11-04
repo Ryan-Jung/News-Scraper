@@ -11,6 +11,7 @@ class NewsWindow(wx.Frame):
 		self.data = self.loadData()
 
 		self.mainsizer = wx.BoxSizer(wx.VERTICAL)
+		self.listbox = None
 
 		#Handles article display
 		self.updateListBox()
@@ -60,18 +61,25 @@ class NewsWindow(wx.Frame):
 	def onRefresh(self,event):
 		self.data = self.loadData()
 		self.updateListBox()
+		#self.SetSizerAndFit(self.mainsizer)
 
 		
 
 	def updateListBox(self):
-		self.listbox = wx.ListBox(self)
+		"""Creates listbox that holds all the articles and allows user interaction with 
+		items in the listbox. 
+		"""
+		if not self.listbox:
+			self.listbox = wx.ListBox(self)
+			self.listbox.SetMinSize(self.GetSize())
+
 		self.data = self.loadData()
 		if self.data:
 			self.listbox.Set(self.data["articles"])
 		else:
-			self.listBox.Set(["No Articles to display"])	
+			self.listbox.Set(["No Articles to display"])	
 
-		self.listbox.SetMinSize(self.GetSize())
+		
 
 	
 	
