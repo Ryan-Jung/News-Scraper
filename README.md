@@ -10,11 +10,11 @@ Gathers latest news articles from www.sfgate.com for the Ubuntu platform (Uses P
 ```
 sudo apt-get install wxPython3.0
 ```
-#Install requirements with pip:
+##Install requirements with pip:
 ```
 pip install -r requirements.txt
 ```
-#Navigate to project directory and enter
+##Navigate to project directory and enter
 ```
 python display_news.py
 ```
