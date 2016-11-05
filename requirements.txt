@@ -1,0 +1,14 @@
+adium-theme-ubuntu==0.3.4
+beautifulsoup4==4.5.1
+get==0.0.0
+html5lib==0.999999999
+post==0.0.0
+public==0.0.0
+query-string==0.0.0
+requests==2.11.1
+setupfiles==0.0.13
+six==1.10.0
+unity-lens-photos==1.0
+webencodings==0.5
+wxPython==3.0.2.0
+wxPython-common==3.0.2.0
