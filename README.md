@@ -15,9 +15,9 @@ Gathers latest news articles from www.sfgate.com
 sudo apt-get install wxPython3.0
 ```
 ###For Windows
-```
-https://wxpython.org/download.php#msw, install for python2.7
-```
+[Download and install for python 2.7](https://wxpython.org/download.php#msw)
+
+
 ##Install requirements with pip:
 ```
 pip install -r requirements.txt
