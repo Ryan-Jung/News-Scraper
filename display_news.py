@@ -27,7 +27,7 @@ class NewsWindow(wx.Frame):
 		self.mainsizer.Add(self.listbox)
 		self.mainsizer.AddStretchSpacer()
 		self.mainsizer.Add(self.view_button, flag=wx.CENTER)
-		self.mainsizer.Add(self.statusBar)
+		#self.mainsizer.Add(self.statusBar)
 
 		#Event handling
 		self.Bind(wx.EVT_LISTBOX, self.saveCurrentSelection)
