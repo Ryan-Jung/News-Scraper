@@ -5,7 +5,7 @@ Gathers latest news articles from www.sfgate.com
 #Ubuntu
 ![Alt text](https://cloud.githubusercontent.com/assets/13326238/20028357/8e324032-a2ec-11e6-871a-b545b823fbeb.png)
 #Windows
-![Alt text](https://cloud.githubusercontent.com/assets/13326238/20034437/861389e4-a37b-11e6-9253-0317a3cfd4b1.jpg)
+![Alt text](https://cloud.githubusercontent.com/assets/13326238/20034541/f9e82a16-a37e-11e6-83cb-11a7d6341af4.png)
 
 #How to use
 ##Clone project
