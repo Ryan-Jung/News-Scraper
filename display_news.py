@@ -96,6 +96,7 @@ class NewsWindow(wx.Frame):
 			self.statusBar.SetStatusText("No articles to display")
 
        
-app = wx.App(False)
-frame = NewsWindow(None, "SfGate Latest News")
-app.MainLoop()
+if __name__ == "__main__":	   
+	app = wx.App(False)
+	frame = NewsWindow(None, "SfGate Latest News")
+	app.MainLoop()
