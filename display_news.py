@@ -8,7 +8,7 @@ class NewsWindow(wx.Frame):
 	def __init__(self, parent, title):
 		wx.Frame.__init__(self, parent, title = title, size=(600,300))
 
-		self.data = None
+		self.data = self.loadData()
 		self.currentUserSelection = 0
 		self.mainsizer = wx.BoxSizer(wx.VERTICAL)
 		self.listbox = None
@@ -76,7 +76,7 @@ class NewsWindow(wx.Frame):
 		"""Displays the current news articles available on www.sfgate.com
 		"""
 		self.statusBar.SetStatusText("Gathering latest articles...")
-		self.data = self.loadData
+		self.data = self.loadData()
 		self.updateListBox()
 		self.statusBar.SetStatusText("Finished!")
 		#self.SetSizerAndFit(self.mainsizer)
