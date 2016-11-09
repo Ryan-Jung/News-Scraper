@@ -18,6 +18,7 @@ class NewsWindow(wx.Frame):
 		
 		self.statusBar = self.CreateStatusBar()
 		self.statusBar.SetStatusText("Waiting for your selection...")
+		
 		#Handles article display
 		self.updateListBox()
 
@@ -27,7 +28,6 @@ class NewsWindow(wx.Frame):
 		self.mainsizer.Add(self.listbox)
 		self.mainsizer.AddStretchSpacer()
 		self.mainsizer.Add(self.view_button, flag=wx.CENTER)
-		#self.mainsizer.Add(self.statusBar)
 
 		#Event handling
 		self.Bind(wx.EVT_LISTBOX, self.saveCurrentSelection)
@@ -40,15 +40,17 @@ class NewsWindow(wx.Frame):
 
 		self.Show(True)
 
+		
 	def loadData(self):
 		"""Returns the scraped data from sfgate
 		"""
 		data = news_scraper.ScrapeNews().data
-		if data:
-			return data
-		else:
-			return None
+		if not data:
+			data = None
+		
+		return data
 
+			
 	def onClick(self, event):
 		"""Opens default browser to display URL of the user's selected article
 		updates status bar to inform user of decision
@@ -63,6 +65,7 @@ class NewsWindow(wx.Frame):
 			time.sleep(5)
 			self.statusBar.SetStatusText("Finished opening: " + articles[index])
 
+			
 	def saveCurrentSelection(self, listbox_event):
 		"""Keeps track of the user's selection 
 		"""
@@ -73,12 +76,12 @@ class NewsWindow(wx.Frame):
 		"""Displays the current news articles available on www.sfgate.com
 		"""
 		self.statusBar.SetStatusText("Gathering latest articles...")
+		self.data = self.loadData
 		self.updateListBox()
 		self.statusBar.SetStatusText("Finished!")
 		#self.SetSizerAndFit(self.mainsizer)
 
 		
-
 	def updateListBox(self):
 		"""Creates listbox that holds all the articles and allows user interaction with 
 		items in the listbox. 
@@ -87,7 +90,6 @@ class NewsWindow(wx.Frame):
 			self.listbox = wx.ListBox(self)
 			self.listbox.SetMinSize(self.GetSize())
 
-		self.data = self.loadData()
 		if self.data is not None:
 			self.listbox.Set(self.data["articles"])
 		else:
