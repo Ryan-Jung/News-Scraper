@@ -18,11 +18,11 @@ sudo apt-get install wxPython3.0
 [Download and install for python 2.7](https://wxpython.org/download.php#msw)
 
 
-##Install requirements with pip:
+##Navigate to Project directory and install requirements with pip:
 ```
 pip install -r requirements.txt
 ```
-##Navigate to project directory and enter
+##In project directory
 ```
 python display_news.py
 ```
