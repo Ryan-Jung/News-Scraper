@@ -12,7 +12,7 @@ Gathers latest news articles from www.sfgate.com
 ##Install wxPython 3.0:
 ###For Ubuntu
 ```
-sudo apt-get install wxPython3.0
+sudo apt-get install python-wxgtk3.0
 ```
 ###For Windows
 [Download and install for python 2.7](https://wxpython.org/download.php#msw)
