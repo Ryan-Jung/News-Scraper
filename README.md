@@ -1,5 +1,5 @@
 # News-Scraper
-Gathers latest news articles from www.sfgate.com 
+Gathers the latest news articles from www.sfgate.com. Click any article and press the view button to open up any article that interests you. Click the refresh button to re-gather the latest articles avaiable on www.sfgate.com
 #For Python 2.7
 
 #Ubuntu
