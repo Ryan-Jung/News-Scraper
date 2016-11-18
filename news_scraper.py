@@ -22,7 +22,6 @@ class ScrapeNews():
 		for index in range(len(websiteScrapers)):
 			scraper = websiteScrapers[index]
 
-			#if(issubclass(scraper, ArticleScraper)):
 			articles.extend(scraper.data["articles"])
 			urls.extend(scraper.data["urls"])
 		
@@ -84,8 +83,7 @@ class SFGateScraper(ArticleScraper):
 			fullURL = self._URL + url
 			return fullURL
 			
-			
-ScrapeNews()
+
 
 			
 
