@@ -18,7 +18,7 @@ sudo apt-get install python-wxgtk3.0
 [Download and install for python 2.7](https://wxpython.org/download.php#msw)
 
 
-##Navigate to Project directory and install requirements with pip:
+##Install requirements with pip:
 ```
 pip install -r requirements.txt
 ```
