@@ -12,7 +12,7 @@ class ScrapeNews():
 		
 	def scrapeAll(self):
 		"""Adds each ArticleScraper's article list and url list together and returns
-		a dictionary {"articles": article_list, "urls", url_list}
+		a dictionary {"articles" : article_list, "urls" : url_list}
 		"""
 		websiteScrapers = [SFGateScraper(),]
 		
@@ -37,7 +37,7 @@ class ArticleScraper:
 	
 	@abstractmethod
 	def scrape(self):
-		"""Should return articles in a dict -> {articles: article_list, urls: url_list}. 
+		"""Should return articles in a dict -> {"articles" : article_list, "urls" : url_list}. 
 			The url_list should contain a full url rather than a relative url.
 		"""
 		raise NotImplementedError()
